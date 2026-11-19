@@ -93,10 +93,9 @@ export const TaskPage = () => {
     }
   };
 
-  const [addTaskState, handleAddTask, isAddTaskLoad] = useActionState(
-    onAddTask,
-    { status: "idle" },
-  );
+  const [, handleAddTask, isAddTaskLoad] = useActionState(onAddTask, {
+    status: "idle",
+  });
 
   const isListOld = deferredSearch !== search;
   const getTasksData = () => {
