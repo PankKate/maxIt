@@ -1,6 +1,6 @@
-import { memo, use } from "react";
-import type { Task, TaskPreview } from "../../../../api/interfaces";
-import { Card, Flex, Tag } from "antd";
+import { memo, use } from 'react';
+import type { Task, TaskPreview } from '../../../../api/interfaces';
+import { Card, Flex, Tag } from 'antd';
 
 function burnCpu(iterations: number) {
   let x = 0;
@@ -10,9 +10,9 @@ function burnCpu(iterations: number) {
   return x;
 }
 
-import styles from "./TasksList.module.scss";
-import { getGroupBy } from "../../../../helpers/groupBy";
-import { PRIORITY_COLOR } from "../../../../api/const";
+import styles from './TasksList.module.scss';
+import { getGroupBy } from '../../../../helpers/groupBy';
+import { PRIORITY_COLOR } from '../../../../api/const';
 
 const SlowItem = memo(({ task }: { task: Task | TaskPreview }) => {
   // искусственная нагрузка, чтобы лаг был заметен
@@ -25,7 +25,7 @@ const SlowItem = memo(({ task }: { task: Task | TaskPreview }) => {
       loading={task.pending}
       className={styles.taskCard}
     >
-      {"priority" in task && "tags" in task && (
+      {'priority' in task && 'tags' in task && (
         <div className={styles.taskCard__content}>
           <Flex gap="small" align="center" wrap>
             <Tag color={PRIORITY_COLOR[task.priority]}>{task.priority}</Tag>
@@ -60,16 +60,11 @@ export const TasksList = memo(
           Array.isArray(el[groupBy]) ? el[groupBy][0] : el[groupBy],
         ),
       ).flat();
-   
-   
-   
-   
     } else {
-              filtered = [...pendingTasks, ...tasks].filter((el) =>
-                   el.title.toLowerCase().includes(formattedSearch),
-            );
+      filtered = [...pendingTasks, ...tasks].filter((el) =>
+        el.title.toLowerCase().includes(formattedSearch),
+      );
     }
-
 
     return (
       <div className={styles.tasksList}>
