@@ -60,13 +60,18 @@ export const TasksList = memo(
           Array.isArray(el[groupBy]) ? el[groupBy][0] : el[groupBy],
         ),
       ).flat();
+   
+   
+   
+   
     } else {
-      filtered = [...pendingTasks, ...tasks].filter((el) =>
-        el.title.toLowerCase().includes(formattedSearch),
-      );
+              filtered = [...pendingTasks, ...tasks].filter((el) =>
+                   el.title.toLowerCase().includes(formattedSearch),
+            );
     }
 
-    
+         const x: any = 1;
+
     return (
       <div className={styles.tasksList}>
         {filtered.map((task) => (
