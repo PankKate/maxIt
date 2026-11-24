@@ -104,6 +104,9 @@ export const TaskPage = () => {
     });
   };
 
+console.log('AAAA');
+
+
   return (
     <main>
       <h1>Трекер задач</h1>
