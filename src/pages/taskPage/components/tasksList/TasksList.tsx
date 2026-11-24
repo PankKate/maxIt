@@ -66,6 +66,7 @@ export const TasksList = memo(
       );
     }
 
+    
     return (
       <div className={styles.tasksList}>
         {filtered.map((task) => (
