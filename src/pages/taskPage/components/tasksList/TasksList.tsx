@@ -70,7 +70,6 @@ export const TasksList = memo(
             );
     }
 
-         const x: any = 1;
 
     return (
       <div className={styles.tasksList}>
